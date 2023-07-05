@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{ 
+    height: 50vw;
+    width: 100vw;
+    background-image: url("bg photo.jpg");
+    background-size: 100% 100%;
+    
+}
+.keys
+{
+    width: 95%;
+    position: relative;
+    top: 30vh;
+    height: 20vh;
+    display: flex;
+    margin: 0 auto;
+    border:2px solid red ;
+    justify-content:space-evenly;
+    align-items: center;
+}
+.key{
+    border-radius: 0.5rem;
+    border:0.4rem solid grey;
+    height: 80%;
+    width: 8%;
+    text-align: center;
+    background-color: rgba(219, 206, 206, 0.4);
+    transition: all 0.07s ease;
+}   
+kbd{
+    display: block;
+    font-size:4rem ;
+    
+}
+span{
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color:beige
+}
+.playing{
+    transform:scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+}

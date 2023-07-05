@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="keys">
+        <div class="key" data-key="65">
+            <kbd>A</kbd>
+            <span>A_Better_Life</span>
+        </div>
+        <div class="key" data-key="83">
+            <kbd>S</kbd>
+            <span>brothers-love</span>
+        </div>
+        <div class="key" data-key="68">
+            <kbd>D</kbd>
+            <span>Commercial_Bliss</span>
+        </div>
+        <div class="key" data-key="70">
+            <kbd>F</kbd>
+            <span>Getting-ready</span>
+        </div>
+        <div class="key" data-key="71">
+            <kbd>G</kbd>
+            <span>Happy_Music</span>
+        </div>
+        <div class="key" data-key="72">
+            <kbd>H</kbd>
+            <span>Too_Fly.mp3</span>
+        </div>
+        <div class="key"  data-key="74">
+            <kbd>J</kbd>
+            <span>Touch_Of_Love</span>
+        </div>
+        <div class="key"  data-key="75">
+            <kbd>K</kbd>
+            <span>Tropical_Keys</span>
+        </div>
+        <div class="key" data-key="76">
+            <kbd>L</kbd>
+            <span>Workout</span>
+        </div>
+    </div>
+    <audio data-key="65" src="./A_Better_Life.mp3"></audio>
+    <audio data-key="83"  src="./brothers-love.mp3"></audio>
+    <audio  data-key="68" src="./Commercial_Bliss.mp3"></audio>
+    <audio  data-key="70" src="./getting-ready.mp3"></audio>
+    <audio data-key="71"src="./Happy_Music.mp3"></audio>
+    <audio data-key="72" src="./Too_Fly.mp3"></audio>
+    <audio data-key="74"src="./Touch_Of_Love.mp3"></audio>
+    <audio data-key="75" src="./Tropical_Keys.mp3"></audio>
+    <audio data-key="76" src="./workout.mp3"></audio>
+    <script>
+        window.addEventListener("keydown",(e)=>
+        {
+        var audio = document.querySelector(`audio[data-key ="${e.keyCode}"]`)
+        var key=document.querySelector(`.key[data-key="${e.keyCode}"]`)
+
+                if(audio){
+                    audio.currentTime=0
+                    audio.play()
+                    
+                    key.classList.add("playing")
+                }
+                return
+        } )     
+       var kk=document.querySelectorAll(".key")
+       kk.forEach((e) => 
+       {
+
+            e.addEventListener('transitionend',remove)
+       }
+       )
+       function remove(k){
+        if(k.propertyName="transform"){
+            this.classList.remove("playing")
+        }
+        return
+       }
+    </script>
+</body>
+</html>
